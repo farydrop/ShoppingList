@@ -22,6 +22,13 @@ object ShopListRepositoryImpl: ShopListRepository {
     //переменная которая будет хранить id элементов
     private var autoIncrementId = 0
 
+    init {
+        for (i in 0 until 10){
+            val item = ShopItem("Name $i",i,true)
+            addShopItem(item)
+        }
+    }
+
     override fun addShopItem(shopItem: ShopItem) {
         //при редоктировании элемента надо сохранить его id
         //если id данного элемента неопределен, то в этом случае мы его установим
